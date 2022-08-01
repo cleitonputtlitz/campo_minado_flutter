@@ -79,11 +79,11 @@ class Campo {
   }
 
   bool get resolvido {
-    return ((minado && marcado) || (!minado && marcado));
+    return ((minado && marcado) || (!minado && aberto));
   }
 
   bool get vizinhancaSegura {
-    return vizinhos.every((v) => !v._minado);
+    return vizinhos.every((v) => !v._minado && !v.marcado);
   }
 
   int get qtdeMinasNaVizinhaca {
